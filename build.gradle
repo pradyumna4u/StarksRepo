@@ -44,6 +44,7 @@ dependencies {
 	testCompile group: 'xmlunit', name: 'xmlunit', version: '1.6'
 	 //TODO: Check out if the masterthought is still necessary
     compile group: 'net.masterthought', name: 'cucumber-reporting', version: '3.7.0'
+    testCompile "com.github.tomakehurst:wiremock:2.11.0"
 	
 	
 }

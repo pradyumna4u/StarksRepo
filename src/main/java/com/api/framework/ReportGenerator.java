@@ -1,13 +1,21 @@
 package com.api.framework;
 
-import net.masterthought.cucumber.Configuration;
-import net.masterthought.cucumber.ReportBuilder;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
+
+import net.masterthought.cucumber.Configuration;
+import net.masterthought.cucumber.ReportBuilder;
+
 public class ReportGenerator {
+
+	@Value("${filepath}")
+	private static String jsonPath;
+
+	@Value("${teamName}")
+	private static String teamname;
 
 	public String fileType = "json";
 	private List<String> jsonFiles = new ArrayList<>();
@@ -17,11 +25,10 @@ public class ReportGenerator {
 	}
 
 	public static void ReportGenerator() {
-		String jsonPath = "build/test-results-files";
-		String teamname = "Starks";
 		ReportGenerator detailReport = new ReportGenerator();
 		detailReport.generateReport(jsonPath, teamname);
 	}
+
 	private void searchDirectory(File directory) {
 
 		if (directory.isDirectory()) {
@@ -53,6 +60,7 @@ public class ReportGenerator {
 	public void generateReport(String jsonFilePath, String Project) {
 		File reportOutputDirectory = new File("build/custom-reports");
 		searchDirectory(new File(jsonFilePath));
+
 		boolean skippedFails = true;
 		boolean pendingFails = false;
 		boolean undefinedFails = true;
@@ -66,7 +74,6 @@ public class ReportGenerator {
 		configuration.setBuildNumber("1");
 		ReportBuilder reportBuilder = new ReportBuilder(jsonFiles, configuration);
 		reportBuilder.generateReports();
-
 	}
 
 }
