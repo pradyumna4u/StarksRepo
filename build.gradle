@@ -14,10 +14,6 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
-
 repositories {
 	mavenCentral()
 }
@@ -37,27 +33,23 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-activemq')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	// https://mvnrepository.com/artifact/com.jayway.restassured/rest-assured
-	testCompile group: 'com.jayway.restassured', name: 'rest-assured', version: '2.9.0'
+	compile group: 'com.jayway.restassured', name: 'rest-assured', version: '2.9.0'
 	// https://mvnrepository.com/artifact/com.google.code.gson/gson
 	compile group: 'com.google.code.gson', name: 'gson', version: '2.8.2'
 	// https://mvnrepository.com/artifact/xmlunit/xmlunit
 	testCompile group: 'xmlunit', name: 'xmlunit', version: '1.6'
 	 //TODO: Check out if the masterthought is still necessary
     compile group: 'net.masterthought', name: 'cucumber-reporting', version: '3.7.0'
-    testCompile "com.github.tomakehurst:wiremock:2.11.0"
-    
+    compile "com.github.tomakehurst:wiremock:2.11.0"
     // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
-compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
-
-// https://mvnrepository.com/artifact/net.sourceforge.javydreamercsw/MySQL-Driver
-compile group: 'net.sourceforge.javydreamercsw', name: 'MySQL-Driver', version: '0.1'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
     // https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
 	compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.20.1'
 }
 sourceSets {
    test {
         java {
-            srcDirs = ["/Users/Nisum/Documents/UITEST/CucumberDemo/src/main/java"]
+            srcDirs = ["/Users/Nisum/Documents/MOSAICTEST/APIAutomation/src/main/java/com/api/StepDefination"]
         }
     }
 }

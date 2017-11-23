@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 public class InMemoryDBUtil {
 
-	private Connection dbConnection;
+	private static Connection dbConnection;
 
-	public void getInMemoryDBConnection(boolean flag) throws ClassNotFoundException, SQLException {
+	public static Connection  getInMemoryDBConnection(boolean flag) throws ClassNotFoundException, SQLException {
 
 		// ResourceReader.readBundle("DBConfig");
 		ResourceReader.loadProperties("src/main/resources/DBConfig.properties");
@@ -27,7 +27,7 @@ public class InMemoryDBUtil {
 			dbConnection = DriverManager.getConnection(ResourceReader.getProperty("InMemoryConnenctionURL"),
 					ResourceReader.getProperty("InMemoryUserName"), ResourceReader.getProperty("InMemoryPassword"));
 			Statement stmt = dbConnection.createStatement();
-			stmt.execute("ATTACH '" + ResourceReader.getProperty("DBName") + "' AS fs");
+			//stmt.execute("ATTACH '" + ResourceReader.getProperty("DBName") + "' AS fs");
 
 		}
 		// if flag set to false connect to Permanent DB
@@ -36,10 +36,11 @@ public class InMemoryDBUtil {
 					ResourceReader.getProperty("ConnectionURL") + ResourceReader.getProperty("DBName"),
 					ResourceReader.getProperty("UserName"), ResourceReader.getProperty("Password"));
 		}
+		return dbConnection;
 
 	}
 
-	public void executeQuery(String query) throws ClassNotFoundException, SQLException {
+	public static void executeQuery(String query) throws ClassNotFoundException, SQLException {
 
 		// The query can be update query or can be select query
 
@@ -71,14 +72,14 @@ public class InMemoryDBUtil {
 
 	}
 
-	public void executeQueriesFromFile(String fileName) throws Exception {
+	public static void executeQueriesFromFile(String fileName) throws Exception {
 		ArrayList<String> queryList = Utility.readtxtAsList(fileName);
 		for (String query : queryList) {
 			executeQuery(query);
 		}
 	}
 
-	public void closeConnection() {
+	public static void closeConnection() {
 		try {
 			dbConnection.close();
 		} catch (Exception e) {
