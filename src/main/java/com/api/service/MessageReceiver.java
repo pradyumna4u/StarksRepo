@@ -1,10 +1,10 @@
 package com.api.service;
 
-import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.TextMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Component;
 
@@ -14,8 +14,8 @@ public class MessageReceiver {
     @Autowired
     private JmsTemplate jmsTemplate;
 
-    @Autowired
-    private Destination destination;
+    @Value("${ibm.mq.inputQueueName}")
+    private String inputQueue;
 
     public JmsTemplate getJmsTemplate() {
         return jmsTemplate;
@@ -25,17 +25,8 @@ public class MessageReceiver {
         this.jmsTemplate = jmsTemplate;
     }
 
-    public Destination getDestination() {
-        return destination;
-    }
-
-    public void setDestination(Destination destination) {
-        this.destination = destination;
-    }
-
     public String receiveMessage() throws JMSException {
-        TextMessage textMessage = (TextMessage) jmsTemplate
-                .receive(destination);
+        TextMessage textMessage = (TextMessage) jmsTemplate.receive(inputQueue);
         return textMessage.getText();
     }
 }
