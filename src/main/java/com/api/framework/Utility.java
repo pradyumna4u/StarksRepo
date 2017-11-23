@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -50,6 +51,24 @@ public class Utility {
 		return everything;
 
 	}
+	
+	public static ArrayList<String> readtxtAsList(String fileName) throws ParserConfigurationException, SAXException, IOException {
+		BufferedReader br = new BufferedReader(new FileReader("src/main/resources/" + fileName + ".txt"));
+		ArrayList<String> list= new ArrayList<String>();
+		try {
+			String line = br.readLine();
+			while (line != null) {
+			list.add(line);
+			line = br.readLine();
+			}
+
+		} finally {
+			br.close();
+		}
+		return list;
+
+	}
+
 
 	public static void updatexml(String tag, String input)
 			throws ParserConfigurationException, SAXException, IOException {
