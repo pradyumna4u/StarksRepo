@@ -32,7 +32,7 @@ public class Utility {
 	}
 
 	public static String readtxt(String fileName) throws ParserConfigurationException, SAXException, IOException {
-		BufferedReader br = new BufferedReader(new FileReader("src/main/resources" + fileName + ".txt"));
+		BufferedReader br = new BufferedReader(new FileReader("src/main/resources/ExpectedResponse" + fileName + ".txt"));
 		String everything;
 		try {
 			StringBuilder sb = new StringBuilder();

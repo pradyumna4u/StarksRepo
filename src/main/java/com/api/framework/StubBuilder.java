@@ -9,4 +9,12 @@ public class StubBuilder {
 		serverManager.startServer().stubFor(get(urlEqualTo(endpoint))
 				.willReturn(aResponse().withHeader("Content-Type", format).withBody(body)));
 	}
+	
+	public static void postGETStub(String endpoint, String format, String body) {
+
+		verify(postRequestedFor(urlEqualTo("/verify/this"))
+		        .withHeader("Content-Type", equalTo("text/xml")));
+	}
+	
+	
 }
