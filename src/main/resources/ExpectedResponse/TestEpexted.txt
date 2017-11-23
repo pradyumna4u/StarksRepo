@@ -1,14 +1,14 @@
 {
   "RestResponse" : {
-    "messages" : [ "State found matching code [HP]." ],
+    "messages" : [ "State found matching code [JK]." ],
     "result" : {
-      "id" : 64,
+      "id" : 65,
       "country" : "IND",
-      "name" : "Himachal Pradesh",
-      "abbr" : "HP",
-      "area" : "6864602SKM",
-      "largest_city" : "Shimla Dharamshala",
-      "capital" : "Shimla Dharamshala"
+      "name" : "Jammu and Kashmir",
+      "abbr" : "JK",
+      "area" : "12541302SKM",
+      "largest_city" : "Srinagar Jammu",
+      "capital" : "Srinagar Jammu"
     }
   }
 }

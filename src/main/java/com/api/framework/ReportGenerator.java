@@ -10,12 +10,8 @@ import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
 
 public class ReportGenerator {
-
-	@Value("${filepath}")
-	private static String jsonPath;
-
-	@Value("${teamName}")
-	private static String teamname;
+	private static String jsonPath="build/test-results-files";
+	private static String teamname="API AUTOMATION";
 
 	public String fileType = "json";
 	private List<String> jsonFiles = new ArrayList<>();

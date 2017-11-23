@@ -3,7 +3,6 @@ package com.api.framework;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -42,13 +41,13 @@ public class DBConnection {
 		dataList.removeAll(dataList);
 		// DBConnection.UserName=ExcelLib.getExcelData("DBInput", 1, 1);
 		// DBConnection.Password=ExcelLib.getExcelData("DBInput", 1, 2);
-//		try {
-//		//	Class.forName(JdbcDriver).newInstance();
-//
-//		} catch (ClassNotFoundException e11) {
-//
-//			//e11.printStackTrace();
-//		}
+		// try {
+		// // Class.forName(JdbcDriver).newInstance();
+		//
+		// } catch (ClassNotFoundException e11) {
+		//
+		// //e11.printStackTrace();
+		// }
 		try {
 			Connection con = InMemoryDBUtil.getInMemoryDBConnection(true);
 			InMemoryDBUtil.executeQueriesFromFile("queryList");
@@ -93,14 +92,14 @@ public class DBConnection {
 
 	public static void copyToExcelFromData(String Query) {
 		try {
-//			try {
-//
-//				Class.forName(JdbcDriver).newInstance();
-//
-//			} catch (ClassNotFoundException e11) {
-//
-//				e11.printStackTrace();
-//			}
+			// try {
+			//
+			// Class.forName(JdbcDriver).newInstance();
+			//
+			// } catch (ClassNotFoundException e11) {
+			//
+			// e11.printStackTrace();
+			// }
 			int count = 0;
 			try {
 

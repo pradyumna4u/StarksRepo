@@ -86,6 +86,11 @@ public class Utility {
 		String message = ut.getStringFromDocument(doc);
 		return message;
 	}
+	
+	public static void ValidateXml(String actual,String expfile) throws ParserConfigurationException, SAXException, IOException {
+		XMLUtil ut = new XMLUtil();
+		ut.xmlValidator(actual, expfile);
+	}
 
 	public static String getTagValueFromOutput(String mess, String tag)
 			throws ParserConfigurationException, SAXException, IOException {

@@ -20,6 +20,7 @@ public class SoapStepDefinination {
 	public void user_should_call_Soap_Endpoint(String arg1) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		SoapEndpoint = Prop.getProp(arg1);
+		Hooks.ebedResult("######SOAP ENDPOINT" + SoapEndpoint);
 
 	}
 
@@ -27,7 +28,9 @@ public class SoapStepDefinination {
 	public void user_Should_hit_the_Action_with_message(String arg1, String arg2) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		Action = Prop.getProp(arg1);
+		Hooks.ebedResult("######SOAP ACTION" + Action);
 		Req = Utility.readtxt("/" + arg2);
+		Hooks.ebedResult("######SOAP REQUEST" + Req);
 
 	}
 
@@ -37,9 +40,10 @@ public class SoapStepDefinination {
 		Response = SoapServiceWrapper.callSoapService(SoapEndpoint, Action);
 	}
 
-	@Then("^Validate the Soap response is proper$")
-	public void validate_the_Soap_response_is_proper() throws Throwable {
-		System.out.println(Response);
+	@Then("^Validate the Soap response is proper \"([^\"]*)\"$")
+	public void validate_the_Soap_response_is_proper(String arg1) throws Throwable {
+		Hooks.ebedResult("######SOAP RESPONSE \n" + Response);
+		Utility.ValidateXml(Response, arg1);
 	}
 
 }
