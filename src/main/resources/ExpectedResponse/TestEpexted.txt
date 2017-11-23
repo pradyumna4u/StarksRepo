@@ -1,0 +1,14 @@
+{
+  "RestResponse" : {
+    "messages" : [ "State found matching code [HP]." ],
+    "result" : {
+      "id" : 64,
+      "country" : "IND",
+      "name" : "Himachal Pradesh",
+      "abbr" : "HP",
+      "area" : "6864602SKM",
+      "largest_city" : "Shimla Dharamshala",
+      "capital" : "Shimla Dharamshala"
+    }
+  }
+}

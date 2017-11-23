@@ -1,0 +1,10 @@
+<SOAP-ENV:Envelope
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:myNamespace="https://www.w3schools.com/xml/">
+	<SOAP-ENV:Header/>
+	<SOAP-ENV:Body>
+		<myNamespace:CelsiusToFahrenheit>
+			<myNamespace:Celsius>100</myNamespace:Celsius>
+		</myNamespace:CelsiusToFahrenheit>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

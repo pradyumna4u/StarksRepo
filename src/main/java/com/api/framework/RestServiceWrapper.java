@@ -10,7 +10,7 @@ public class RestServiceWrapper {
 	public static String restGetCall(String url, String parameter, int StatusCode) {
 		String res = StringUtils.EMPTY;
 		if (parameter != StringUtils.EMPTY) {
-			res = RestAssured.given().when().get(url + "/{}", parameter).then().statusCode(StatusCode).extract()
+			res = RestAssured.given().when().get(url+parameter).then().statusCode(StatusCode).extract()
 					.asString();
 		} else {
 			res = RestAssured.given().when().get(url).then().statusCode(StatusCode).extract().asString();
