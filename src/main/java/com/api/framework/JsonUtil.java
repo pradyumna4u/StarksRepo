@@ -4,8 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.junit.Assert;
 
 import com.google.gson.JsonElement;
@@ -15,7 +13,7 @@ import com.google.gson.JsonParser;
 public class JsonUtil {
 
 	public static String getJsonValue(String path, String jsonelementpath)
-			throws FileNotFoundException, IOException, JSONException {
+			throws FileNotFoundException, IOException {
 		String JsonElementAsString = null;
 		JsonElement JsonElement1 = null;
 		try {
@@ -50,10 +48,5 @@ public class JsonUtil {
 		JsonElement o2 = parser.parse(Utility.readtxt(ExpectedResponseFile));
 		Assert.assertTrue((o1.equals(o2)));
 
-	}
-
-	private static JSONObject getRESTData(String string) throws JSONException {
-		JSONObject jsonObj = new JSONObject(string);
-		return jsonObj;
 	}
 }

@@ -6,7 +6,6 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Value;
 
 public class Prop {
 	private static String proppath = "src/main/resources/test.properties";

@@ -9,8 +9,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.connection.UserCredentialsConnectionFactoryAdapter;
 import org.springframework.jms.core.JmsTemplate;
-
-import com.gap.foundation.configuration.EncryptedString;
 import com.ibm.mq.jms.MQQueueConnectionFactory;
 import com.ibm.msg.client.wmq.WMQConstants;
 
@@ -33,7 +31,7 @@ public class JMSConfiguration {
     private String username;
 
     @Value("${ibm.mq.password}")
-    private EncryptedString password;
+    private String password;
 
     @Bean
     public MQQueueConnectionFactory mqConnectionFactory() throws JMSException {
@@ -52,7 +50,7 @@ public class JMSConfiguration {
         userCredentialsConnectionFactoryAdapter
                 .setTargetConnectionFactory(mqConnectionFactory());
         userCredentialsConnectionFactoryAdapter.setUsername(username);
-        userCredentialsConnectionFactoryAdapter.setPassword(password.decrypt());
+        userCredentialsConnectionFactoryAdapter.setPassword(password);
         userCredentialsConnectionFactoryAdapter.createQueueConnection();
         return userCredentialsConnectionFactoryAdapter;
     }
