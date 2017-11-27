@@ -11,3 +11,8 @@ Feature: API TESTING
     When User Should hit the Action "DemoSoapAction" with message "SoapRequest"
     And User will get the Soap reponse
     Then Validate the Soap response is proper "TestExpectedxml"
+
+  Scenario: Call the Queue Service and validate the response
+    Given User should Put Message "/testBOLDctoDC" in "QA.21.WMM.MOSAIC.BOL"
+    When User should get the Message in "QL.04.TEST"
+    Then Validate the Queue Message is proper "TestExpectedxml"

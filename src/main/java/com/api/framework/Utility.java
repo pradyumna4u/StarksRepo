@@ -21,7 +21,7 @@ public class Utility {
 	private static Document doc;
 
 	public static String readxml(String fileName) throws ParserConfigurationException, SAXException, IOException {
-		File fXmlFile = new File("src/main/resources" + fileName + ".xml");
+		File fXmlFile = new File("src/main/resources/ExpectedResponse/" + fileName + ".xml");
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = null;
 		dBuilder = dbFactory.newDocumentBuilder();

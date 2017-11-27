@@ -12,8 +12,8 @@ public class StubBuilder {
 	
 	public static void postGETStub(String endpoint, String format, String body) {
 
-		verify(postRequestedFor(urlEqualTo("/verify/this"))
-		        .withHeader("Content-Type", equalTo("text/xml")));
+		verify(postRequestedFor(urlEqualTo(endpoint))
+		        .withHeader("Content-Type", equalTo(format)));
 	}
 	
 	
