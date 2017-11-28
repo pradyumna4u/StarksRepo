@@ -1,4 +1,4 @@
-package com.api.framework;
+package com.api.servicewrapper;
 
 import java.util.Map;
 

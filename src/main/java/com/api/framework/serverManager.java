@@ -9,7 +9,7 @@ public class serverManager {
 
 		if (!wireMockServer.isRunning()) {
 			wireMockServer.start();
-			
+
 		}
 		return wireMockServer;
 	}

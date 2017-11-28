@@ -1,4 +1,4 @@
-package com.api.framework;
+package com.api.servicewrapper;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -7,6 +7,8 @@ import java.io.InputStream;
 import javax.xml.soap.*;
 
 import org.apache.commons.lang3.StringUtils;
+
+import com.api.framework.Utility;
 
 public class SoapServiceWrapper {
 

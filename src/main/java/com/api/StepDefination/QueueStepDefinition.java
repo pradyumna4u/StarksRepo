@@ -5,8 +5,8 @@ import java.util.List;
 import javax.jms.Message;
 import javax.jms.TextMessage;
 
-import com.api.framework.JMSServiceWrapper;
 import com.api.framework.Utility;
+import com.api.servicewrapper.JMSServiceWrapper;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -39,7 +39,7 @@ public class QueueStepDefinition {
 
 	@Then("^Validate the Queue Message is proper \"([^\"]*)\"$")
 	public void validate_the_Queue_Message_is_proper(String arg1) throws Throwable {
-		// Utility.ValidateXml(Response, arg1);
+		 //Utility.ValidateXml(Response, arg1);
 	}
 
 }

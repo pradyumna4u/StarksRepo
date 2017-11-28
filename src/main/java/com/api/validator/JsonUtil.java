@@ -1,4 +1,4 @@
-package com.api.framework;
+package com.api.validator;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import org.junit.Assert;
 
+import com.api.framework.Utility;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;

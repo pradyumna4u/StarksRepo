@@ -8,8 +8,8 @@ import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
 
 public class ReportGenerator {
-	private static String jsonPath="build/test-results-files";
-	private static String teamname="API AUTOMATION";
+	private static String jsonPath = "build/test-results-files";
+	private static String teamname = "API AUTOMATION";
 
 	public String fileType = "json";
 	private List<String> jsonFiles = new ArrayList<>();
@@ -69,5 +69,4 @@ public class ReportGenerator {
 		ReportBuilder reportBuilder = new ReportBuilder(jsonFiles, configuration);
 		reportBuilder.generateReports();
 	}
-
 }

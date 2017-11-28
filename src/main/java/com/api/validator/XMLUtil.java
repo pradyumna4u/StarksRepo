@@ -1,4 +1,4 @@
-package com.api.framework;
+package com.api.validator;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -19,6 +19,8 @@ import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+
+import com.api.framework.Utility;
 
 @Component
 public final class XMLUtil {
