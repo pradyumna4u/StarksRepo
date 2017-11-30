@@ -3,8 +3,10 @@ package com.api.StepDefination;
 import java.io.IOException;
 
 import com.api.framework.Log;
+import com.api.framework.ReportGenerator;
 
 import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
 /**

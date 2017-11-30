@@ -12,7 +12,7 @@ public class InMemoryDBUtil {
 
 	private static Connection dbConnection;
 
-	public static Connection  getInMemoryDBConnection(boolean flag) throws ClassNotFoundException, SQLException {
+	public static Connection getInMemoryDBConnection(boolean flag) throws ClassNotFoundException, SQLException {
 
 		// ResourceReader.readBundle("DBConfig");
 		ResourceReader.loadProperties("src/main/resources/DBConfig.properties");
@@ -27,7 +27,8 @@ public class InMemoryDBUtil {
 			dbConnection = DriverManager.getConnection(ResourceReader.getProperty("InMemoryConnenctionURL"),
 					ResourceReader.getProperty("InMemoryUserName"), ResourceReader.getProperty("InMemoryPassword"));
 			Statement stmt = dbConnection.createStatement();
-			//stmt.execute("ATTACH '" + ResourceReader.getProperty("DBName") + "' AS fs");
+			// stmt.execute("ATTACH '" + ResourceReader.getProperty("DBName") +
+			// "' AS fs");
 
 		}
 		// if flag set to false connect to Permanent DB

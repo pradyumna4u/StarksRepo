@@ -39,15 +39,6 @@ public class DBConnection {
 
 	public static List<List<String>> executeQuery(String Query) throws Exception {
 		dataList.removeAll(dataList);
-		// DBConnection.UserName=ExcelLib.getExcelData("DBInput", 1, 1);
-		// DBConnection.Password=ExcelLib.getExcelData("DBInput", 1, 2);
-		// try {
-		// // Class.forName(JdbcDriver).newInstance();
-		//
-		// } catch (ClassNotFoundException e11) {
-		//
-		// //e11.printStackTrace();
-		// }
 		try {
 			Connection con = InMemoryDBUtil.getInMemoryDBConnection(true);
 			InMemoryDBUtil.executeQueriesFromFile("queryList");
