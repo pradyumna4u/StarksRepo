@@ -1,4 +1,4 @@
-package com.api.framework;
+package com.api.mock;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 

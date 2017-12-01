@@ -1,4 +1,4 @@
-package com.api.framework;
+package com.api.mock;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 

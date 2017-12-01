@@ -1,4 +1,4 @@
-package com.api.framework;
+package com.api.mock;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,6 +7,9 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
+import com.api.framework.ResourceReader;
+import com.api.framework.Utility;
 
 public class InMemoryDBUtil {
 
